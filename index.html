@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrap">
+         <div class="row">
+                    <h1>Progress Bar</h1>
+                    <div id="progress">
+                        <div id="bar"></div>
+                        <div id="count">0%</div>
+                    </div>
+                    
+         </div>
+         <div class="row">
+                    <button id="btn">Click</button>
+        </div>
+</div>
+
+    <script>
+    document.getElementById('btn').addEventListener('click', function(){
+            var bar = document.getElementById('bar');
+            var count = document.getElementById('count');
+            var width = 1;
+            var id = setInterval(frame,50);
+            function frame(){
+                if (width != 100){
+                    
+                    width++;
+                    bar.style.width = width + "%";
+                    count.innerHTML  = width + "%";
+                }
+                else if(width >=100) {
+                    clearInterval(id);
+                    alert('Done');
+                } 
+                
+            }
+                
+
+
+    });
+    
+    
+    </script>
+</body>
+</html>
